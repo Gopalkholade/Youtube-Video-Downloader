@@ -12,6 +12,7 @@ if __name__=='__main__':
         raise IndexError("Multiple Arguments Given. Required 1 for resolution")
     res = sys.argv[-1]
     if res in avail_res:
-        download(streams=stream, resolution=res)
+        path = download(streams=stream, resolution=res)
+        print(f"Downloaded at -> {path}")
     else:
         print(f"""Given argument for resolution not available. Enter from resulution available :{', '.join(avail_res)}""")

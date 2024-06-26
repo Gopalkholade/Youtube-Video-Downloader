@@ -10,7 +10,7 @@ def fetch(link):
         ("Connction Error! try again..")
 
 def check_res(yt):
-    streams = yt.streams.filter(file_extension='mp4')
+    streams = yt.streams.filter(file_extension='mp4',progressive=True)
     available_res = list(set([i.resolution for i in streams if i.resolution != None ]))
     return available_res,streams
 
